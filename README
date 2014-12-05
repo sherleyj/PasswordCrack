@@ -12,6 +12,8 @@ public static Hashtable<String,Vector<String>> dictMangles = new Hashtable<Strin
 [Finish]
 I finished all requirements for this project.  I got 16 out of 20 for passwd1 which runs in about 23 seconds. I go 14 out of 20 for passwd2 which run in about 27 seconds. 
 
+[Test Cases]
+
 [passwd1]
 Run with:
 java PasswordCrack words.txt passwd1.txt

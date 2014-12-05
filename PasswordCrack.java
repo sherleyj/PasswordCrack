@@ -173,7 +173,7 @@ public class PasswordCrack {
 				for (int i = 33; i < 127; i++) {
 					v.add(((char) i) + word);
 				}
-				
+
 				//reverse string
 				String rev = new String();
 				for (int i = 0; i < word.length(); i++) {
@@ -190,6 +190,14 @@ public class PasswordCrack {
 				//reflect the string
 				v.add(rev.concat(word));
 				v.add(word.concat(rev));
+
+				for (int i = 33; i < 127; i++) {
+					v.add(rev + ((char) i) );
+				}
+
+				for (int i = 33; i < 127; i++) {
+					v.add( ((char) i) + rev );
+				}
 
 				//prepend char to word and uppercase first letter
 				temp = ((char)((wordInt>96 && wordInt<123)? wordInt - 32: wordInt)) + word.substring(1, word.length());
@@ -212,6 +220,26 @@ public class PasswordCrack {
 				//append char to word and lowercase first letter
 				for (int i = 33; i < 127; i++) {
 					v.add(temp + ((char) i));
+				}
+
+				//remove first letter and append char
+				for (int i = 33; i < 127; i++) {
+					v.add(word.substring(1, word.length()) + ((char) i)); 
+				}
+
+				//remove first letter and prepend char
+				for (int i = 33; i < 127; i++) {
+					v.add(((char) i) + word.substring(1, word.length())); 
+				}
+
+				//remove last letter and prepend char
+				for (int i = 33; i < 127; i++) {
+					v.add(((char) i) + word.substring(0, word.length() - 1));
+				}
+
+				//remove last letter and append char
+				for (int i = 33; i < 127; i++) {
+					v.add(word.substring(0, word.length() - 1) + ((char) i));
 				}
 
 				//System.out.println(dictMangles.get(word));
@@ -321,6 +349,26 @@ public static void addHashTable(String word){
 				//append char to word and lowercase first letter
 				for (int i = 33; i < 127; i++) {
 					v.add(temp + ((char) i));
+				}
+
+				//remove first letter and append char
+				for (int i = 33; i < 127; i++) {
+					v.add(word.substring(1, word.length()) + ((char) i)); 
+				}
+
+				//remove first letter and prepend char
+				for (int i = 33; i < 127; i++) {
+					v.add(((char) i) + word.substring(1, word.length())); 
+				}
+
+				//remove last letter and prepend char
+				for (int i = 33; i < 127; i++) {
+					v.add(((char) i) + word.substring(0, word.length() - 1));
+				}
+
+				//remove last letter and append char
+				for (int i = 33; i < 127; i++) {
+					v.add(word.substring(0, word.length() - 1) + ((char) i));
 				}
 
 				//System.out.println(dictMangles.get(word));
