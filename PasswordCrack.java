@@ -138,7 +138,7 @@ public class PasswordCrack {
 
 				//ncapitalize the string
 				temp = word.substring(1, word.length()).toUpperCase();
-				v.add(((char)((wordInt>96 && wordInt<123)? wordInt - 32: wordInt)) + temp);
+				v.add(((char)((wordInt>96 && wordInt<123)? wordInt: wordInt + 32)) + temp);
 
 				// append char to word.
 				for (int i = 33; i < 127; i++) {
@@ -157,6 +157,10 @@ public class PasswordCrack {
 				}
 				v.add(rev);
 				//System.out.println(rev);
+
+				//reflect the string
+				v.add(rev.concat(word));
+				v.add(word.concat(rev));
 
 				//prepend char to word and uppercase first letter
 				temp = ((char)((wordInt>96 && wordInt<123)? wordInt - 32: wordInt)) + word.substring(1, word.length());
