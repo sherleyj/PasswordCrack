@@ -5,7 +5,6 @@ import java.math.*;
 
 public class PasswordCrack {
 	public static Hashtable<String,Vector<String>> dictMangles = new Hashtable<String,Vector<String>>();
-	public static Hashtable<String,Vector<String>> dictDoubleMangles = new Hashtable<String,Vector<String>>();
 
 	public static void main(String args[]) throws IOException{
 
@@ -45,7 +44,7 @@ public class PasswordCrack {
 
 
 			long timeEnd = System.nanoTime();
-			System.out.println( "\ngot " + count + " out of 20");
+			System.out.println( "\nCracked " + count + " out of 20 passwords.");
 			System.out.println( "time in ms: " + (timeEnd - timeBegin)/1000000);
 
 		} catch (Exception E) {
